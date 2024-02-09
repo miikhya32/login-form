@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background: url("https://images.pexels.com/photos/2387793/pexels-photo-2387793.jpeg?cs=srgb&dl=pexels-adrien-olichon-2387793.jpg&fm=jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+        }
+        .form{
+            max-width: 350px;
+            padding: 10px;
+            background: rgba(61, 59, 59, 0.7);
+            position: relative;
+            margin: 60px auto;
+            border: 1px solid lightgray;
+            border-radius: 5px;
+            border: 1px solid lightgray;
+            opacity: 1;
+            cap
+        }
+        .img{
+            margin:-60px auto 40px;
+            width: 100px;
+            height: 100px;
+            border-radius: 100px;
+            overflow: hidden;
+        }
+        .img img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        input{
+            width: 100%;
+            padding: 12px;
+            margin: 10px auto;
+            border: 1px solid lightgrey;
+            border-radius: 5px;
+            background: rgba(211, 207, 207, 0.7);
+        }
+        button{
+            width: 100%; /* Changed width to 50% */
+            background: #4267B2;
+            color: white;
+            padding: 10px;
+            margin: 10px auto;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 9px;
+            
+        
+        }
+       
+        .blue{
+            background-color: #4267B2;
+            width: 40%; /* Changed width to 50% */
+            background: #4267B2;
+            color: white;
+            padding: 10px;
+            margin: 5px auto;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 9px;
+           margin-left: 10px;
+        
+        }
+        .red{
+            background-color: #DD4B39;
+            width: 40%; /* Changed width to 50% */
+            color: white;
+            padding: 10px;
+            margin: 5px auto;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 9px;
+            margin-left: 40px;
+        
+        }
+        .facebook-icon {
+            margin-right: 10px;
+        }
+        p{
+            margin-left: 70px;
+            color: rgb(255, 255, 255);
+        }
+        a{
+            text-decoration: none;
+            color: blue;
+        }
+        h1 {
+            margin: 5px;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="form">
+        <div class="img">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR94ycCia05jK46w9iCTxMSCuDSuFi6MbDqyl5NhNsvUMYHBWlCYyll91JnuyJYAsgt9gA&usqp=CAU" alt="">
+        </div>
+        <h1 align="center">Form login</h1>
+        <form onsubmit="validate(); return false;">
+            <input type="text" id="username" placeholder="Email or number" class="input">
+            <input type="password" id="password" placeholder="password" class="input">
+            <button type="submit">Login</button>
+            <hr>
+            <button class="blue"><i class="fab fa-facebook facebook-icon"></i> Sign in with Facebook</button>
+            <button class="red"><i class="fab fa-google facebook-icon"></i> Sign in with Google</button>
+        </form>
+        <p id="text" style="color: red;"></p>
+        <p>don't have acount<a href="#"> sign up</a></p>
+    </div>
+
+    <script>
+        const validate = () => {
+            const username = document.querySelector("#username").value;
+            const password = document.querySelector("#password").value;
+
+            if (username.trim() === "") {
+                document.querySelector("#text").innerHTML = "Username is empty";
+            } else if (password.trim() === "") {
+                document.querySelector("#text").innerHTML = "Password is empty";
+            } else if (username !== "khalo" || password !== "123456") {
+                document.querySelector("#text").innerHTML = "Incorrect username or password";
+            } else {
+                document.querySelector("#text").innerHTML = "";
+                alert("Login successful!");
+            }
+        };
+    </script>
+</body>
+</html>
